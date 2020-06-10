@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { render } from "react-dom";
 import Calendar from "react-calendar";
 import 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import './index.css'
 
 const ReactCalendar = () => {
   const [date, setDate] = useState(new Date());
@@ -14,9 +14,9 @@ const ReactCalendar = () => {
 
   return (
     <div>
-      <Calendar showWeekNumbers onChange={onChange} value={date} />
+      <Calendar onChange={onChange} value={date} />
       {console.log(date)}
-      {date.toString()}
+      {/* {date.toString()} */}
     </div>
   );
 

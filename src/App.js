@@ -1,27 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import 'react-calendar/dist/Calendar.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  getEvent = () => {
+    fetch('/events')
+      .then(response => response.json())
+      .then(json => this.setState({events: json}))
+      .catch(error => console.error(error))
+  }
 }
 
 export default App;
